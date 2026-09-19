@@ -1,0 +1,14 @@
+# Free Render web service (no credit card). Connect this GitHub repo in the
+# Render dashboard, pick plan "Free", and deploy the branch that contains this
+# file. The live URL will be https://<service-name>.onrender.com
+services:
+  - type: web
+    name: defrustrator
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /api/health
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DEFRUSTRATOR_HARDWARE_PARTS
+        value: /tmp/hardware-parts.json
