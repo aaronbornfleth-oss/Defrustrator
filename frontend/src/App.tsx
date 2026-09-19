@@ -187,7 +187,7 @@ export default function App() {
       <div className="scope">
         {session?.has_report
           ? `Copy for Decorative and CSV downloads use the included rows in the selected section.${counts?.short_fronts ? ` ${counts.short_fronts} drawer fronts under 7 inches will copy and save separately for narrower rails.` : ''}`
-          : 'Choose a PDF, review its sizes, then copy for Decorative or save a .mddorder file. Shopify embedding is a later hosting step — this app does not place supplier orders.'}
+          : 'Choose a PDF, review its sizes, then copy for Decorative or save a .mddorder file. In Shopify, load this app with ?embed=1. This app does not place supplier orders.'}
       </div>
       <div className={`status${error ? ' error' : ''}`}>{error || status}</div>
       <main className="main">

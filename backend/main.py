@@ -12,6 +12,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 import branding as brand
+from embed import CORS_ORIGIN_REGEX, CORS_ORIGINS, EmbedHeadersMiddleware
 from bore_math import BOTTOM, STANDARD, TOP, center_preview, display_from_top, edge_equation
 from bore_math import from_top, move_center, offset_from_position, position_from_offset, signed_inches
 from bore_split import PendingBoreDecision
@@ -84,10 +85,12 @@ class OffsetPayload(BaseModel):
 app = FastAPI(title=brand.APP_NAME, version=brand.APP_VERSION)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=['*'],
+    allow_origins=CORS_ORIGINS,
+    allow_origin_regex=CORS_ORIGIN_REGEX,
     allow_methods=['*'],
     allow_headers=['*'],
 )
+app.add_middleware(EmbedHeadersMiddleware)
 
 
 def snapshot_response():

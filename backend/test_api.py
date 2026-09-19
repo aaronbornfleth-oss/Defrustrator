@@ -138,6 +138,35 @@ class ApiTests(unittest.TestCase):
         response = self.client.post('/api/import/pdf', files={'file': ('notes.txt', b'hello', 'text/plain')})
         self.assertEqual(response.status_code, 400)
 
+    def test_shopify_iframe_and_cors_headers(self):
+        health = self.client.get('/api/health', headers={'Origin': 'https://leftcoastoriginal.com'})
+        csp = health.headers.get('content-security-policy', '')
+        self.assertIn('frame-ancestors', csp)
+        self.assertIn('https://*.myshopify.com', csp)
+        self.assertIn('leftcoastoriginal.com', csp)
+        self.assertIn('leftcoastcabinets.com', csp)
+        self.assertNotIn('DENY', health.headers.get('x-frame-options', '').upper())
+        self.assertNotIn('SAMEORIGIN', health.headers.get('x-frame-options', '').upper())
+        self.assertEqual(health.headers.get('access-control-allow-origin'), 'https://leftcoastoriginal.com')
+
+        shop = self.client.get(
+            '/api/health',
+            headers={'Origin': 'https://left-coast-cabinets.myshopify.com'},
+        )
+        self.assertEqual(
+            shop.headers.get('access-control-allow-origin'),
+            'https://left-coast-cabinets.myshopify.com',
+        )
+
+        cabinets = self.client.get(
+            '/api/health',
+            headers={'Origin': 'https://www.leftcoastcabinets.com'},
+        )
+        self.assertEqual(
+            cabinets.headers.get('access-control-allow-origin'),
+            'https://www.leftcoastcabinets.com',
+        )
+
 
 if __name__ == '__main__':
     unittest.main()

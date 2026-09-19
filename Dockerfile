@@ -12,7 +12,8 @@ COPY backend/requirements.txt /app/backend/requirements.txt
 RUN pip install --no-cache-dir -r /app/backend/requirements.txt
 COPY backend /app/backend
 COPY samples /app/samples
+COPY scripts/start.sh /app/start.sh
 COPY --from=ui /src/frontend/dist /app/frontend/dist
-WORKDIR /app/backend
+RUN chmod +x /app/start.sh
 EXPOSE 8000
-CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["/app/start.sh"]

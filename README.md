@@ -97,16 +97,49 @@ Undo/Redo: Ctrl+Z / Ctrl+Y (or Ctrl+Shift+Z). Delete removes selected table rows
 
 Logos used: `frontend/public/defrustrator-wordmark-byline.png` (header), `heron.png` / `heron.ico` (favicon), `lcc-logo.png` (Powered by footer). The same files live in `backend/assets/`.
 
-## Shopify / hosting (not done in this repo)
+## Live URL (Shopify iframe)
 
-This is a staff tool first. A later Shopify page can iframe the hosted UI, for example `/pages/defrustrator` with `?embed=1`, **without** adding a public nav menu until you ask for that. Still needed before any storefront publish:
+**Persistent public HTTPS URL: not live yet.** This repo is ready to host, but a free host account token is not in the agent environment, so the service was not created for you.
 
-- Staff-only vs customer-facing access
-- Hosting URL, HTTPS, and iframe/clipboard permissions
-- Whether orders stay as downloaded `.mddorder` files or move to cloud history
-- Theme width and “open full screen” fallback
+What Aaron needs (no credit card, no paid plan):
 
-Do not treat conversion drafts as Shopify commerce orders or Decorative submissions.
+1. Create a **free Render** account at [https://dashboard.render.com/register](https://dashboard.render.com/register) (GitHub login is fine).
+2. Either click **Deploy to Render** below and choose the **Free** web service plan, **or** send an agent `RENDER_API_KEY` from Render **Account Settings → API Keys**.
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/aaronbornfleth-oss/Defrustrator)
+
+Until that deploy exists, do not treat any temporary tunnel as the Shopify host.
+
+After Render finishes, the live base URL will look like `https://defrustrator.onrender.com` (Render may add a suffix). Use:
+
+- App: `https://<service>.onrender.com`
+- Embed: `https://<service>.onrender.com/?embed=1`
+- Health: `https://<service>.onrender.com/api/health`
+
+Shopify page iframe (no public nav unless you ask for one):
+
+```html
+<iframe
+  src="https://<service>.onrender.com/?embed=1"
+  title="Mozaik to Decorative Defrustrator"
+  style="width:100%;min-height:80vh;border:0;"
+  allow="clipboard-write; clipboard-read"
+></iframe>
+```
+
+CORS and `Content-Security-Policy: frame-ancestors` allow embedding from `https://*.myshopify.com`, `https://admin.shopify.com`, `leftcoastoriginal.com`, and `leftcoastcabinets.com` (including `www`). The app does not send `X-Frame-Options: DENY`.
+
+Fly.io is **not** used here: new Fly accounts require a credit card and no longer offer a free web tier.
+
+This is still a staff tool first. Do not add a public Shopify menu until access is decided. Do not treat conversion drafts as Shopify commerce orders or Decorative submissions.
+
+Non-coder Render steps if the button is not used:
+
+1. Open [https://dashboard.render.com](https://dashboard.render.com) and sign in.
+2. **New → Web Service** → connect GitHub → `aaronbornfleth-oss/Defrustrator`.
+3. Branch: the branch with this README (or `main` after merge). Runtime: **Docker**. Instance: **Free**.
+4. Health check path: `/api/health`. Create Web Service.
+5. Wait for the first build. Copy the `*.onrender.com` URL into the iframe `src` above (add `?embed=1`).
 
 ## Desktop source
 
