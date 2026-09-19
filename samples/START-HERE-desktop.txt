@@ -1,0 +1,345 @@
+MOZAIK TO DECORATIVE DEFRUSTRATOR
+Left Coast Cabinets
+
+1. Double-click Mozaik to Decorative Defrustrator.exe.
+2. Click Open PDF and choose a Mozaik door / drawer-box size report.
+3. Review the two tabs. Click a row and use Change type, or double-click
+   to edit its sizes and other options. The copy window can edit rows too.
+4. Leave Export section on All sections for the combined tables,
+   or select an individual section to order a particular style.
+5. Click Copy for Decorative to see the supplier's rows and columns.
+   Choose Doors & standard fronts, Fronts under 7 inches, or Drawer boxes
+   & trays. Click Copy all
+   rows, then paste into Decorative's matching Excel-data input box.
+   Copy each table separately. For fronts under 7 inches, configure the
+   narrower top and bottom rails in Decorative before adding that group.
+   Save CSVs writes a separate file for each nonempty table.
+6. Click Hardware email to review the whole PDF's hardware. Enter part
+   numbers and quantities for any additional hinges, then create and
+   copy the email body. Leave additional quantities blank or 0 to skip.
+7. Click Clear data to empty the review and start a new conversion.
+   If you have unsaved edits, the app offers to save the editable order.
+8. Click Save order (Ctrl+S) to keep your work in a .mddorder file.
+   Click Open order to resume it later. Use File > Save order as to keep
+   a separate copy. The original PDF is not needed to reopen the order.
+
+UPDATE 1.21
+- Light blue highlights customized rows in the main app and Copy for
+  Decorative. It compares current values with the imported row and standard
+  bore defaults, including quantity-1 rows created when splitting doors.
+  The row editor highlights the individual values that differ.
+- Saving an order keeps these highlights. Undo/Redo updates them, and
+  returning a value to its original setting removes its highlight.
+- Top and bottom bores now have a Mozaik offset input next to the final
+  position. Enter 0 for the standard 4 inches; enter 3 for 4 + 3 = 7 inches.
+  A negative offset moves closer to the edge: -1/2 gives 3 1/2 inches.
+  Top is measured from the top; bottom is measured from the bottom.
+- You can also edit the final position directly; its offset updates to
+  match. The illustration and live equations show how the offset works.
+  Blank clears a position; Reset bore positions restores the defaults.
+- Fractions stay exact in saved orders, Decorative copies, and CSVs.
+  Invalid offsets or positions outside the door cannot be applied.
+  Center-bore reference conversion, hinge-side confirmations, and
+  Undo/Redo continue to work. The window title shows v1.21.
+
+UPDATE 1.20
+- Save order / Open order keep editable .mddorder files on your computer.
+  The first save asks for a filename and location. Later saves update that
+  file. File > Save order as (Ctrl+Shift+S) saves a separate copy.
+- Saved orders contain every section and all applied row changes: sizes,
+  quantities, types, custom bore positions, L/R choices, split doors,
+  excluded/deleted rows, scoops, and the short-front grouping. Fractions
+  remain exact; center positions stay measured from the top internally.
+- Source row descriptions, cabinet references, original PDF total checks,
+  hardware data, and review issues are kept with the order. The PDF path
+  is retained for reference; reopening does not read or require that PDF.
+- Undo/Redo history is restored, including the ability to undo a saved
+  deletion or split. The saved export section, main tab, and selected row
+  are restored. Save order always includes ALL sections, even when filtered.
+- Hardware drafts keep additional part numbers and quantities, unfinished
+  correction fields, and edited email text. Close in the hardware window
+  keeps that draft in this session; Save order stores it on disk. A new PDF
+  job starts with blank additional quantities and retains part preferences.
+- Save order is also available in Copy for Decorative and Hardware email.
+  In the row editor, Apply changes first; Cancel discards that form's edit.
+- Before closing, clearing, or replacing an order with unsaved changes,
+  Yes saves it, No continues without saving those changes, and Cancel keeps
+  it open. Canceling or failing the save also keeps the current order open.
+- Save CSVs and copying supplier data do not mark the editable order saved.
+  Saving an order does not place an order with Decorative or send an email.
+- Keyboard: Ctrl+S saves the order; Ctrl+Shift+S saves as; Ctrl+Shift+O opens
+  a saved order. Ctrl+O still opens a PDF. You can also drag a .mddorder file
+  onto the EXE to open it. The window title shows v1.20.
+
+UPDATE 1.19
+- Copy for Decorative tab counts now show total items (the sum of Qty),
+  including all doors/fronts or drawer boxes/trays in that export group.
+- The summary below each table leads with total items, followed by rows
+  and columns. Totals respect section filters, exclusions, deletions,
+  quantity edits, type changes, and Undo/Redo.
+- Splitting a quantity-2 door row into two quantity-1 rows keeps the
+  item total at 2. The window title shows v1.19.
+
+UPDATE 1.18
+- The center bore editor now defaults to Bottom — Mozaik. Enter the
+  measurement from the bottom of the door; the app converts it to the
+  distance from the top that Decorative requires.
+- Choose Top — Decorative to enter a measurement from the top instead.
+  Switching reference edges converts the displayed number without moving
+  the bore. Existing custom positions reopen at the same physical location.
+- Enter an adjustment in inches and click Move up or Move down. A live
+  door diagram shows the placement, the distances from both edges, and how
+  far the bore is above or below center. The preview states exactly what
+  Decorative will receive. Fractions remain exact throughout.
+- Example: on a 48-inch door, moving up 1/2 inch from center means
+  24 1/2 inches from bottom (Mozaik), or 23 1/2 from top (Decorative).
+- Center Bore Position in the review tables, Decorative copies, and CSVs
+  is always measured from the top. Supplier column headings are unchanged.
+- If you change door height after a custom edit, the entered distance
+  stays fixed relative to the currently selected edge. Automatic center
+  bores continue to follow the midpoint until manually adjusted.
+- Invalid positions and moves outside the door are rejected. Blank clears
+  the center position; Reset bore positions restores the original defaults.
+  Bore and Center Bore Yes/No settings follow the existing type/height rules.
+- Custom-bore pair splitting and hinge-side confirmations still apply.
+  Ctrl+Z/Ctrl+Y in the editor restore the measurement, reference edge,
+  adjustment amount, and live preview together.
+- The window title shows v1.18.
+
+UPDATE 1.17
+- Edit a door's top, center, or bottom bore position, then Apply changes.
+  If the row has more than one door, the app asks whether to duplicate
+  the custom bore position for the other door(s).
+- Yes applies all three positions to every door and creates separate
+  quantity-1 rows. A pair becomes one L row and one R row. For more than
+  two doors, confirm the number of left- and right-hinging doors.
+- No applies the custom positions to one door, asks its hinge side,
+  and keeps the remaining doors together with their original settings.
+- For a quantity-1 row, confirm Left or Right hinging. The choice stays
+  on that line item and carries through to Decorative copies and CSVs.
+- Cancel returns to the editor without applying anything. Ctrl+Z undoes
+  the whole split and restores the original row; Ctrl+Y repeats it.
+- These prompts apply to hinged doors, including Glass. Drawer fronts
+  and Applied Doors keep their existing rules. Total quantity is preserved.
+- The window title shows v1.17.
+
+UPDATE 1.16
+- Click a line item and press Delete to remove it in the main review or
+  Copy for Decorative table. Keypad Delete works too. Ctrl+Z restores it;
+  Ctrl+Y redoes the deletion. In text fields, Delete still edits text.
+- Double-click any door or drawer-front row, or use Edit selected row,
+  to edit Top Bore Position, Center Bore Position, and Bottom Bore Position.
+  Enter fractions or decimals, then Apply changes. All three positions
+  carry through to the supplier copy and CSV.
+- The window title shows v1.16 so the installed version is easy to check.
+
+UPDATE 1.15
+- The main header now uses a single Mozaik-to-Decorative logo: a small
+  right-pointing arrow between the names and the byline
+  "by Left Coast Cabinets" below Defrustrator.
+- "Powered by" and the original Left Coast Cabinets logo appear at the
+  bottom of the app. The simple heron remains the Windows app icon.
+
+UPDATE 1.14
+- Ctrl+Z undoes the latest row edit, type change, inclusion change, or
+  deletion. Ctrl+Y redoes it. Undo and Redo buttons show when a change is
+  available in both the main review and Copy for Decorative window.
+- Both windows share one history. A new change after Undo clears Redo.
+  Undo and Redo restore fractional sizes, bore overrides, scoop settings,
+  quantities, and the correct separate batch for fronts under 7 inches.
+- Inside a row editor, Ctrl+Z and Ctrl+Y undo and redo that form's changes.
+  Apply changes saves the whole edit as one step in the report history.
+  Cancel leaves the report unchanged. Ctrl+Shift+Z also performs Redo.
+- Opening a different PDF or clearing data starts a fresh history.
+  Undo and Redo do not change files already saved or text already copied.
+- The new Mozaik Decorative Defrustrator wordmark pairs a coastal heron,
+  cabinet door, and waves with the Left Coast Cabinets color palette.
+  The existing company logo and simple heron app icon are retained.
+
+UPDATE 1.13
+- Select a row and click Delete row in the main review or copy window.
+  Deleted rows disappear from the app, copies, and CSVs. Select several
+  rows in the copy window to delete them together. Undo in the main window restores
+  the most recent deletion; click again to restore earlier deletions.
+- Double-click any door or drawer-front row to edit Top Bore Position,
+  Center Bore Position, and Bottom Bore Position. Fractions and decimals
+  are accepted, and the edited positions carry through to copies and CSVs.
+  Leave a position blank to clear it. Reset bore positions restores the
+  type/height defaults. Changing the row's type also restores defaults.
+  Position edits do not change the Bore or Center Bore settings.
+- On Drawer boxes & trays, use Change type or double-click a row to choose
+  Drawer Box or Tray. Tray sets Scoop to A; Drawer Box clears Scoop.
+  The app shows the type for review, while supplier exports retain the
+  original five columns. Hardware quantities remain as reported in the PDF.
+
+UPDATE 1.12
+- Click a row in either the review or copy window and choose Change type:
+  Door, Applied Door, Glass Front Door, or 5-Piece Drawer Front.
+- Applied Door stays labeled Applied Door in the app. It copies and saves
+  as Door with Bore None, Location none, Center Bore no, and blank bore
+  positions by default. Glass Front Door displays and exports as Glass
+  with boring.
+- Every included drawer front under 7 inches tall goes into its own copy
+  tab and a drawer-fronts-under-7-inches.csv file. It is excluded from the
+  standard door/front export. Exactly 7 inches remains in the standard
+  group. This applies to all drawer-front types, and uses the edited height.
+- Edits in the copy window update the main review and move rows between
+  groups automatically. Export section and excluded rows are respected.
+- Choose narrower rail dimensions separately in Decorative for the short
+  fronts. Door sizes and hardware quantities are not adjusted by this rule.
+
+UPDATE 1.11
+- 5-Piece Drawer Front rows always show lowercase no in the Center Bore
+  column, in the app, Decorative copies, and saved CSVs, at every height.
+  Top, center, and bottom bore positions default to blank.
+
+UPDATE 1.10
+- 5-Piece Drawer Front rows always show lowercase none in the Location
+  column, in the app, Decorative copies, and saved CSVs. Bore remains None
+  and the center, top, and bottom hinge-bore positions default to blank.
+- The row editor sets the location automatically when you change the type.
+
+UPDATE 1.9
+- Decorative copies end at the last data row, without a final line break
+  that could create an extra blank row when pasted. Required blank cells,
+  fractional dimensions, and all supplier headings are preserved.
+
+UPDATE 1.8
+- Every Decorative copy starts with the original supplier column headings,
+  followed by the data rows. This applies to Copy all rows, Copy selected
+  rows, and Ctrl+C. Headers cannot be turned off.
+- Headings match the supplied screenshots, including Type, Qty, Width,
+  Height, French Lite, Bore, Location, Center Bore, Top Bore Position,
+  Center Bore Position, and Bottom Bore Position for doors/fronts.
+- Box/tray headings are Qty, Drawer Width, Drawer Height, Drawer Depth,
+  and Scoop. No column letters or row numbers are copied.
+
+EARLIER IMPROVEMENTS
+- Copy for Decorative opens a spreadsheet-style preview with column
+  letters, supplier headings, and row numbers. It respects the selected
+  export section, row edits, and included/excluded rows.
+- Copy all rows copies the current table. Select rows with Shift/Ctrl
+  and click Copy selected rows to copy part of the table instead.
+- Ctrl+C copies selected rows, or all rows if none are selected.
+  Ctrl+A selects all rows. The tables retain their selections when switching.
+- Fractions and blank cells are preserved in their exact supplier columns.
+- Copying does not write a file. Save CSVs still asks for a folder.
+
+- Renamed Mozaik to Decorative Defrustrator.
+- The app displays the Left Coast Cabinets logo with a matching forest
+  green, sage, and soft blue color scheme.
+- The supplied heron artwork is the Windows app and window icon.
+- The logo and icon are bundled inside the EXE for use on any computer.
+
+- Additional hinges are optional: no Yes/No answers are required.
+- Lazy Susan / bi-fold, blind-corner, and Blum AVENTOS each have part-number
+  and quantity fields. Blank or zero quantities leave the item out.
+- Part numbers and units are remembered on this computer after creating
+  an email. Quantities always start blank for each new email.
+- Use + Part to add more parts for a category, such as mounting plates
+  or AVENTOS components. Clear a part number or remove an extra row, then
+  create an email to update the remembered parts.
+- Clear data resets the current job and keeps remembered part numbers.
+
+- Sizes and bore positions now display and export as mixed fractions,
+  such as 17 27/32. Whole-inch measurements stay as whole numbers.
+  You can still enter decimals; the app converts them to exact fractions.
+- Hardware email creates editable text with a Copy email body button.
+  The app does not send emails or place orders.
+- Euro Frameless hinges use 71B3590. The same quantity of hinge clips
+  is included with part number 174H7100I (the last character is I).
+- Each glide part number is ordered separately in sets. PDF individual
+  quantities are divided by 2, and 563H prefixes become 563.
+- An odd number of individual glides requires a reviewed set quantity.
+- Spacers use part number T593570 and keep their PDF quantity.
+- Adjustable leg levelers use part number 40027290 and keep their PDF
+  quantity. They appear in the email only when listed in the PDF.
+- Additional hinges use the part numbers, quantities, and order units
+  (each or sets) you enter. They are added to the standard PDF hardware.
+- Pulls, screws, pins, and other hardware are excluded.
+
+- Tab switches reuse the existing tables and keep each tab's selection
+  and scroll position. Ctrl+Tab also switches between the two tables.
+- If a section filter belongs to the other tab, switching tabs resets
+  the filter to All sections so the relevant rows are visible.
+- Clear data resets rows, totals, filters, and PDF checks. Clearing during
+  an import cancels that import's result. Saved CSVs and PDFs stay on disk.
+- Save CSVs asks for a destination folder before writing any files.
+  Canceling that folder selection saves nothing.
+
+The app is portable: no Python installation, account, or internet connection
+is required. You can move the EXE to another folder. Keep this guide nearby.
+It processes PDFs locally and does not upload reports or place orders.
+Remembered parts are stored in %LOCALAPPDATA%\Mozaik Converter\hardware-parts.json.
+This file contains part numbers and units only; no job quantities or PDFs.
+
+DEFAULTS
+- Drawer fronts: 5-Piece Drawer Front; Bore None; Location none;
+  Center Bore no; top, center, and bottom positions blank by default.
+- Doors: Bore A, Location L; explicitly named Susan doors use Susan.
+- Explicit glass door labels: Glass.
+- Center bore: Yes only when door height is greater than 36 inches.
+  The center position is exactly half the door height.
+- Door top and bottom bore positions: 4 inches each.
+- Trays: Scoop A. Drawer boxes: Scoop blank.
+- Dimensions: exact fractional inches. No overlay,
+  opening-size adjustment, or rounding is applied.
+- Hardware: available in Hardware email; excluded from the supplier CSVs.
+
+REVIEW
+The sample's Door Size labels do not reveal glass or lazy Susan status.
+If Mozaik does not label these explicitly, choose Glass or Location Susan
+manually after checking the cabinet plan. A row represents its entire
+quantity. Ordinary edits apply to every piece in that row. Custom door
+bore edits ask whether to apply them to one door or every door, and split
+the row as described in Update 1.17 above.
+
+The PDF may contain several styles. Style, material, species, and finish
+are not in the supplier CSV columns. Use the Export section selector to
+save separate files when those styles require separate supplier orders.
+The two combined sample CSVs contain all supplied styles.
+
+Columns match the provided Anytime Online workbook and screenshots,
+including the workbook's trailing space in the Bore header. The live
+Decorative Specialties paste screen has not been tested. Check the supplier's
+preview before submitting an order.
+
+The app checks extracted quantities against each PDF section total.
+Unrecognized pages, missing totals, unreadable rows, or scanned pages
+block export. Use text-based Mozaik reports with the same ruled Door Sizes
+and Dwr Box/Tray Sizes tables as the supplied example.
+
+Double-click a row to change type, location (L / R / Susan), quantity,
+dimensions, French Lite configuration, scoop, or bore positions. Bore
+positions start with automatic defaults and can be edited or reset.
+You can exclude an entire row from export.
+Rules & checks shows the original PDF total checks. Edits change the
+exported quantities, and are not saved back into the source PDF.
+
+New CSV exports never overwrite an existing file; a numbered filename
+is used. Save order keeps applied edits in an editable .mddorder file so
+you can reopen and continue later. Save CSVs creates supplier tables.
+
+ORIGINAL SAMPLE VALIDATION (BEFORE LATER MOZAIK REVISIONS)
+Modern Cabinetry - Spigener Residence, 7 pages:
+30 doors + 21 drawer fronts = 51 pieces across 26 door/front rows.
+19 drawer boxes + 6 trays = 25 pieces across 19 drawer/tray rows.
+4 doors receive a center bore at 24 11/16 inches.
+All 6 PDF section totals match. Hardware page 7 contains:
+54 hinges (71B3590) and 54 matching clips (174H7100I).
+3 sets of 563.3050B (12 inches), 9 sets of 563.4570B (18 inches),
+and 13 sets of 563.5330B (21 inches).
+24 spacers (T593570, your specified supplier part number).
+No adjustable leg levelers appear in this sample.
+
+Nominal glide lengths verified against Blum's TANDEM component table:
+https://d2.blum.com/services/BEC003/tdmbmn_ep_dok_bus_%24sen-us_%24aof_%24v14.pdf
+
+SOURCE CODE
+The source folder is provided for future changes. To run from source,
+install Python with Tk, then: pip install -r requirements.txt
+Run: python app.py
+Tests: python -m unittest discover -p "test_*.py"
+Set MOZAIK_SAMPLE_PDF to a sample PDF path to enable integration checks.
+The integration quantity checks use the Spigener report revision from
+2026-09-15 at 10:00: 31 doors, 20 fronts, 56 hinges, and 30 spacers.
